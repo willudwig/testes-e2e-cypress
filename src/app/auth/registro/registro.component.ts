@@ -59,7 +59,7 @@ export class RegistroComponent implements OnInit {
 
   public registrar() {
     if (this.form.invalid) {
-      this.toastr.warning('Por favor preencha o formulário corretamente antes de prosseguir.', 'Aviso');
+      this.toastr.warning('Por favor, preencha o formulário corretamente antes de prosseguir.', 'Aviso');
       return;
     }
 

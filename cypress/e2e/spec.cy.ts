@@ -14,5 +14,5 @@ describe('Primeiro acesso do usuario', () => {
     cy.url().should('contain', 'conta/autenticar')
 
 
-  })
+  });
 })
