@@ -15,6 +15,7 @@
           <div class="form-group my-3 position-relative">
             <label class="form-label" for="nome">Nome de Usuário</label>
             <input
+              data-cypress="nome"
               formControlName="nome"
               [ngClass]="nome?.touched && nome?.invalid ? 'is-invalid' : ''"
               type="text"
@@ -30,6 +31,7 @@
           <div class="form-group my-3 position-relative">
             <label class="form-label" for="email">Endereço de Email</label>
             <input
+              data-cypress="email"
               formControlName="email"
               [ngClass]="email?.touched && email?.invalid ? 'is-invalid' : ''"
               type="email"
@@ -46,6 +48,7 @@
           <div class="form-group my-3 position-relative">
             <label class="form-label" for="senha">Senha</label>
             <input
+            data-cypress="senha"
               formControlName="senha"
               [ngClass]="senha?.touched && senha?.invalid ? 'is-invalid' : ''"
               type="password"
@@ -62,6 +65,7 @@
            <div class="form-group my-3 position-relative">
             <label class="form-label" for="confirmarSenha">Confirmar Senha</label>
             <input
+              data-cypress="confirmarSenha"
               formControlName="confirmarSenha"
               [ngClass]="confirmarSenha?.touched && confirmarSenha?.invalid ? 'is-invalid' : ''"
               type="password"
@@ -77,6 +81,7 @@
           <!-- Submit button -->
           <div class="card-footer g-grid d-flex gap-1 mt-4">
             <button
+              data-cypress="btnRegistrar"
               type="submit" class="btn btn-primary px-5">
               <i class="pi pi-save me-2"></i>
               Registrar

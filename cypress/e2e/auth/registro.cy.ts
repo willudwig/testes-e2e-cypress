@@ -1,4 +1,8 @@
+import authSetup from "./util/atuh.setup";
+
 describe('alguma coisa', () =>{
+
+  const form = authSetup.obterFormRegistro();
 
   beforeEach(() => {
     cy.visit('conta/registrar');
@@ -18,19 +22,15 @@ describe('alguma coisa', () =>{
   it('Deve - Notificar sobre usuário inválido', () => {
 
     //arrange
-    const inputNome = cy.get('[formControlName=nome]');
-    const inputEmail = cy.get('[formControlName=email]');
-    const inputSenha = cy.get('[formControlName=senha]');
-    const inputConfirmarSenha = cy.get('[formControlName=confirmarSenha]');
-    const btnRegistrar = cy.get('button[type=submit]');
 
     //action
-    inputNome.type('Cy');
-    inputEmail.type('cypress@g.com');
-    inputSenha.type('123&abcABC');
-    inputConfirmarSenha.type('123&abcABC');
-    btnRegistrar.click();
-    cy.wait(4000);
+    form.nome().type("Cy");
+    form.email().type("cypress@g.com");
+    form.senha().type("123&abcABC");
+    form.confirmarSenha().type("123&abcABC");
+    form.btnRegistrar().click();
+
+    cy.wait(3000);
 
     //assert
     cy.contains('Por favor, preencha o formulário corretamente antes de prosseguir.');
@@ -73,7 +73,7 @@ describe('alguma coisa', () =>{
     inputSenha.type('123&abcABC');
     inputConfirmarSenha.type('123&abcABC');
     btnRegistrar.click();
-    cy.wait(4000);
+    cy.wait(3000);
 
     //assert
     cy.contains("Login 'cypress@g.com' já está sendo utilizado");
